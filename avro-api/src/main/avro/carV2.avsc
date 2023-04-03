@@ -1,0 +1,38 @@
+{
+    "type": "record",
+    "name": "ExtendedCar",
+    "namespace": "com.epam.mentoring.model",
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "numberOfSeats",
+            "type": "int"
+        },
+        {
+            "name": "engineType",
+            "type": {
+                "name": "EngineType",
+                "symbols": [
+                    "DIESEL",
+                    "GASOLINE",
+                    "ELECTRIC"
+                ],
+                "type": "enum"
+            }
+        },
+        {
+            "name": "type",
+            "type": {
+                "name": "CarType",
+                "symbols": [
+                    "SEDAN",
+                    "SUV",
+                    "MINIVAN"
+                ],
+                "type": "enum"
+            }
+        }]
+}

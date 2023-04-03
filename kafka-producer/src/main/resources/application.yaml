@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    function:
+      definition: carProducer;extendedCarProducer
+    stream:
+      bindings:
+        carProducer-out-0:
+          destination: vehicle-details
+          content-type: application/*+avro
+        extendedCarProducer-out-0:
+          destination: vehicle-details
+          content-type: application/*+avro
+      kafka:
+        bindings:
+          carProducer-out-0:
+            producer:
+              configuration:
+                value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+                schema.registry.url: http://localhost:8081
+          extendedCarProducer-out-0:
+            producer:
+              configuration:
+                value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+                schema.registry.url: http://localhost:8081
+
+server:
+  port: 8100

@@ -1,0 +1,18 @@
+{
+    "type": "record",
+    "name": "Car",
+    "namespace": "com.epam.mentoring.model",
+    "fields": [
+        {
+            "name": "id",
+            "type": "string"
+        },
+        {
+            "name": "numberOfSeats",
+            "type": "int"
+        },
+        {
+            "name": "engineType",
+            "type": "string"
+        }]
+}
